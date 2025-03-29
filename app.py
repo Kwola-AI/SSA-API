@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List  # Import List for response model typing
 
-from .db import database, models
-from .schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
-from .crud import crud  # Import directly
+from db import database, models
+from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
+from crud import crud  # Import directly
 
 # Create database tables if they don't exist
 models.Base.metadata.create_all(bind=database.engine)
