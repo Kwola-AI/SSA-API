@@ -1,5 +1,9 @@
 from sqlalchemy import Column, Integer, String, Boolean, Date
+<<<<<<< Updated upstream
 from database import Base
+=======
+from .database import Base  # Update this import
+>>>>>>> Stashed changes
 
 class PlayerDetails(Base):
     __tablename__ = "player_details"

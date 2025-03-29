@@ -3,12 +3,19 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List  # Import List for response model typing
 
+<<<<<<< Updated upstream
 from db import database, models
 from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
 from crud import crud  # Import directly
+=======
+from db.database import SessionLocal, engine  # Update this import
+from db import models  # Update this import
+from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
+from crud import crud  # Update this import
+>>>>>>> Stashed changes
 
 # Create database tables if they don't exist
-models.Base.metadata.create_all(bind=database.engine)
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -24,7 +31,7 @@ app.add_middleware(
 
 # Dependency to get database session
 def get_db():
-    db = database.SessionLocal()
+    db = SessionLocal()
     try:
         yield db
     finally:
