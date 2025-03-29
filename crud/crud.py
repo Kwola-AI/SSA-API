@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from server.db.models import PlayerDetails
-from server.schemas.player_schemas import PlayerCreate, PlayerUpdate
+from db.models import PlayerDetails
+from schemas.player_schemas import PlayerCreate, PlayerUpdate
 
 def create_player(db: Session, player: PlayerCreate):
     db_player = PlayerDetails(**player.dict())
