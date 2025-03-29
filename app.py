@@ -3,16 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List  # Import List for response model typing
 
-<<<<<<< Updated upstream
 from db import database, models
 from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
 from crud import crud  # Import directly
-=======
+
 from db.database import SessionLocal, engine  # Update this import
 from db import models  # Update this import
 from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
 from crud import crud  # Update this import
->>>>>>> Stashed changes
 
 # Create database tables if they don't exist
 models.Base.metadata.create_all(bind=engine)
@@ -69,4 +67,4 @@ def delete_existing_player(player_id: int, db: Session = Depends(get_db)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    uvicorn.run("app:app", host="0.0.0.0", port=8000)
