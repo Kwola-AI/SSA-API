@@ -7,7 +7,7 @@ from db import database, models
 from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
 from crud import crud  # Import directly
 
-from db.database import SessionLocal, engine  # Update this import
+from db.database import SessionLocal, engine, Base  # Update this import
 from db import models  # Update this import
 from schemas.player_schemas import PlayerCreate, PlayerResponse, PlayerUpdate
 from crud import crud  # Update this import
