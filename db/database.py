@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Replace these with your MySQL credentials, database info, and port
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://2p2jGBAmdebWJcX.root:y9DuejnV7qsCaZBs@gateway01.us-west-2.prod.aws.tidbcloud.com:4000/ssa_db?ssl=true"
+SQLALCHEMY_DATABASE_URL = "postgresql+asyncpg://kwola:j2sGzh9wBZoehJrkBx1lqDgeRFgjZQdf@dpg-cvocombuibrs73boa3m0-a:5432/ssa_db"
 
 # Create the engine with the new MySQL URL
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
